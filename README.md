@@ -37,8 +37,5 @@ The data model is built around a few key custom objects that model the subscript
 Contact (Subscriber) → Subscription__c → Invoice__c → Shipment__c
 
 Developed By
-[Your Name]
+AKSHAT SHARMA
 
-LinkedIn: [Your LinkedIn Profile URL]
-
-Portfolio: [Your Portfolio URL]
