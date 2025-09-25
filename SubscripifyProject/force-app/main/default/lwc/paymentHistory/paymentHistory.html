@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Payment History" icon-name="utility:money">
+        <div class="slds-m-around_medium">
+            <template if:true={payments}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={payments}
+                    columns={columns}>
+                </lightning-datatable>
+            </template>
+            <template if:true={error}>
+                <div class="slds-text-color_error">
+                    An error occurred while loading your payment history.
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

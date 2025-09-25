@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Address Manager" icon-name="utility:location">
+        <div class="slds-m-around_medium">
+            <template if:false={isEditing}>
+                <p>{shippingAddress.street}</p>
+                <p>{shippingAddress.city}, {shippingAddress.state} {shippingAddress.postalCode}</p>
+                <p>{shippingAddress.country}</p>
+                <lightning-button label="Edit" onclick={handleEdit} class="slds-m-top_medium"></lightning-button>
+            </template>
+            <template if:true={isEditing}>
+                <lightning-input-field label="Street" value={shippingAddress.street} onchange={handleInputChange}></lightning-input-field>
+                <lightning-input-field label="City" value={shippingAddress.city} onchange={handleInputChange}></lightning-input-field>
+                <lightning-input-field label="State/Province" value={shippingAddress.state} onchange={handleInputChange}></lightning-input-field>
+                <lightning-input-field label="Postal Code" value={shippingAddress.postalCode} onchange={handleInputChange}></lightning-input-field>
+                <lightning-input-field label="Country" value={shippingAddress.country} onchange={handleInputChange}></lightning-input-field>
+
+                <div class="slds-m-top_small">
+                    <lightning-button label="Save" onclick={handleSave}></lightning-button>
+                    <lightning-button label="Cancel" onclick={handleCancel} class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

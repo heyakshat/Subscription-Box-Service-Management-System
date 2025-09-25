@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Subscription Details" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <template lwc:if={status}>
+                <p><strong>Status:</strong> {status}</p>
+                <p><strong>Tier:</strong> {tier}</p>
+                <p><strong>Next Billing Date:</strong> {nextBillingDate}</p>
+            </template>
+            <template lwc:else>
+                <template lwc:if={error}>
+                    <div class="slds-text-color_error">
+                        An error occurred: {error.body.message}
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="slds-grid slds-grid_align-center slds-m-vertical_x-large">
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

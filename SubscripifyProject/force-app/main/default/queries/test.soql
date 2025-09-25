@@ -1,0 +1,3 @@
+SELECT Name, Status__c, Next_Billing_Date__c
+FROM Subscription__c
+WHERE Status__c = 'Active'
